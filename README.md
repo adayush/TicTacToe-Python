@@ -1,2 +1,3 @@
 # Tic-Tac-Toe from Python
-A simple command line Tic-Tac-Toe game made from Python
+
+##Trying to find the most simple way to build this game in Python
