@@ -1,15 +1,17 @@
 def check():
-    # horizontal checking - WORKS
+    # horizontal checking
     for x in (1, 4, 7):
         if moves[str(x)] == moves[str(x+1)] == moves[str(x+2)] == player:
             return moves[str(x)]
     
+    # vertical checking
     i = 0
     while(i < 3):
         if moves[str(7 + i)] == moves[str(4 + i)] == moves[str(1 + i)]:
             return moves[str(7 + i)]
         i += 1
 
+    # diagonal checking
     if moves['7'] == moves['5'] == moves['3']:
         return moves['7']
     elif moves['1'] == moves['5'] == moves['9']:
@@ -19,13 +21,14 @@ def check():
 
 print("———— Welcome to Tic-Tac-Toe made by Us ————\n\n")
 
+# Mapping the number pad to the grid of the game
 moves = {'7': " ", '8': " ", '9': " ",
          '4': " ", '5': " ", '6': " ",
          '1': " ", '2': " ", '3': " "}
 
 turns = 0
 
-while(turns<9):
+while turns < 9:
     print(" %c | %c | %c" % (moves['7'], moves['8'], moves['9']))
     print("———|———|———")
     print(" %c | %c | %c" % (moves['4'], moves['5'], moves['6']))
@@ -34,10 +37,7 @@ while(turns<9):
 
     if turns > 3:
         winner = check()
-        if winner == 'X':
-            print("Game Over\n" + winner + " is the winner!")
-            break
-        elif winner == 'O':
+        if winner == 'X' or winner == 'O':
             print("Game Over\n" + winner + " is the winner!")
             break
 
