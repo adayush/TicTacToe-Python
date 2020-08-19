@@ -38,7 +38,7 @@ while turns < 9:
     if turns > 3:
         winner = check()
         if winner == 'X' or winner == 'O':
-            print("Game Over\n" + winner + " is the winner!")
+            print("\nGame Over\n" + winner + " is the winner!")
             break
 
     player = 'X' if (turns%2 == 0) else 'O'
